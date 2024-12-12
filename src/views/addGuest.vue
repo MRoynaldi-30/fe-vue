@@ -15,7 +15,7 @@ const newGuest = ref({
   email: '',
   date_of_birth: '',
   id_card_number: '',
-}) // Data untuk menambah guest
+}) 
 
 // Fungsi untuk menambah guest
 const handleAddGuest = async () => {
@@ -35,12 +35,16 @@ const handleAddGuest = async () => {
 <template>
   <div class="h-screen bg-gradient-to-br flex items-center flex-col w-full bg-gray-100">
     <HeaderComponent />
-    <div class="w-full flex flex-col items-center justify-center h-screen">
-      <form @submit.prevent="handleAddGuest" class="bg-white px-10 py-4 rounded-xl w-screen shadow-xl max-w-sm">
+    <div class="w-full flex flex-col justify-center h-screen px-32">
+      <div class="flex justify-end px-2 py-3">
+        <p class="bg-blue-400 px-2 rounded-lg inline-block hover:bg-blue-700"><router-link to="/home" class="text-nowrap text-medium font-bold text-white">Back</router-link></p>
+      </div>
+      <form @submit.prevent="handleAddGuest" class="bg-white px-10 py-4 rounded-xl shadow-xl">
         <div class="flex items-center justify-center mb-4">
           <h2 class="font-bold text-xl">Add Guest</h2>
         </div>
         <div class="mb-2">
+          <label for="name">Name</label>
             <input
               v-model="newGuest.name"
               placeholder="Name"
@@ -49,6 +53,7 @@ const handleAddGuest = async () => {
             />
         </div>
         <div class="mb-2">
+          <label for="email">Email</label>
             <input
               v-model="newGuest.email"
               placeholder="Email"
@@ -58,6 +63,7 @@ const handleAddGuest = async () => {
             />
         </div>
         <div class="mb-2">
+          <label for="date_of_birth">Date of Birth</label>
             <input
               v-model="newGuest.date_of_birth"
               placeholder="Date of Birth"
@@ -67,6 +73,7 @@ const handleAddGuest = async () => {
             />
         </div>
         <div class="mb-2">
+          <label for="id_card_number">ID Card Number<span></span></label>
             <input
               v-model="newGuest.id_card_number"
               placeholder="ID Card Number"

@@ -42,10 +42,13 @@ const handleSearchGuest = async () => {
 </script>
 
 <template>
-  <div class="h-screen bg-gradient-to-br flex items-center flex-col w-full">
+  <div class="h-screen bg-gradient-to-br flex items-center flex-col w-full bg-gray-100">
     <HeaderComponent />
     <!-- Form untuk Search Guest -->
-    <div class="flex items-start flex-col w-full px-10 my-3">
+    <div class="flex items-start flex-col w-full px-10 mb-3 mt-6">
+      <div class="mb-1 ml-1">
+        <h1 class="font-bold text-xl">Data Guest</h1>
+      </div>
       <form @submit.prevent="handleSearchGuest" class="flex gap-2">
         <input
           v-model="searchQuery"
@@ -54,17 +57,13 @@ const handleSearchGuest = async () => {
           class="pl-2 outline-none border w-full rounded-lg py-2"
         />
         <button
-          class="bg-green-400 px-2 rounded-lg font-bold hover:bg-green-700 text-white"
+          class="bg-green-400 px-2 rounded-lg font-bold hover:bg-green-700 hover:text-white"
           type="submit"
         >
           Search
         </button>
-        <p
-          class="bg-green-400 px-2 rounded-lg font-bold hover:bg-green-700 text-white flex items-center"
-        >
-          <router-link to="/add" class="text-blue-400 hover:text-blue-700 text-nowrap"
-            >Add Guest</router-link
-          >
+        <p class="bg-green-400 px-2 rounded-lg font-bold hover:bg-green-700 flex items-center">
+          <router-link to="/add" class="text-nowrap">Add Guest</router-link>
         </p>
       </form>
       <!-- <ul>
@@ -73,18 +72,14 @@ const handleSearchGuest = async () => {
     </div>
 
     <!-- Daftar Guests -->
-    <div class="shadow-lg rounded-lg mx-4 md:mx-10 flex-grow">
-      <table class="w-full table-fixed">
+    <div class="rounded-lg flex-grow bg-gray-100 w-full overflow-x-auto px-10">
+      <table class="w-full shadow-lg">
         <thead>
-          <tr class="bg-gray-100">
-            <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Name</th>
-            <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Email</th>
-            <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">
-              Date of Birth
-            </th>
-            <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">
-              ID Card Number
-            </th>
+          <tr class="bg-gray-200">
+            <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Name</th>
+            <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Email</th>
+            <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Date of Birth</th>
+            <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">ID Card Number</th>
           </tr>
         </thead>
         <tbody class="bg-white">
