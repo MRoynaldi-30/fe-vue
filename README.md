@@ -1,35 +1,51 @@
-# fe-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+# Frontend - Vue
+Project Technical Test Web Development Aksesmu (Guest Book).
+## Fitur Utama
+    1. Login User
+    2. Register User
+    3. Logout User
+    4. Add data Guest
+    5. Show data Guest
+    6. Search data Guest
+## Prasyarat
+Sebelum menjalankan proyek ini, pastikan kamu memiliki hal-hal berikut:
 
-## Recommended IDE Setup
+Node.js (versi terbaru yang stabil)
+npm (atau yarn jika kamu memilih untuk menggunakan yarn).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+Untuk memverifikasi jika sudah terinstal, jalankan perintah berikut di terminal:
+```bash
+  node -v
+  npm -v
 ```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
+
+
+## Cara Menjalankan Project FrontEnd
+
+Clone repositori:
+
+```bash
+  git clone https://github.com/MRoynaldi-30/fe-vue.git
+  cd fe-vue
 ```
 
-### Compile and Minify for Production
+Install dependencies:
 
-```sh
-npm run build
+```bash
+  npm install
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+Jika kamu menggunakan yarn:
+```bash
+  yarn install
 ```
+Menjalankan Projek:
+```bash
+  npm run dev
+```
+
+
+## Sekian dan Terima kasih
