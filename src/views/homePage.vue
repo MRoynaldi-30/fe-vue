@@ -66,9 +66,6 @@ const handleSearchGuest = async () => {
           <router-link to="/add" class="text-nowrap">Add Guest</router-link>
         </p>
       </form>
-      <!-- <ul>
-        <li v-for="guest in searchResults" :key="guest.id">{{ guest.name }} - {{ guest.email }}</li>
-      </ul> -->
     </div>
 
     <!-- Daftar Guests -->

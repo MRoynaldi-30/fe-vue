@@ -52,15 +52,15 @@ const handleLogin = async () => {
             required
           />
         </div>
-        <div class="flex justify-center items-center mt-3">
+        <div class="flex justify-center items-center mt-4 ">
           <button
             type="submit"
-            class="bg-green-400 p-2 rounded-xl text-white hover:bg-green-700 font-bold"
+            class="bg-green-400 w-full p-2 rounded-xl text-white hover:bg-green-700 font-bold"
           >
             Login
           </button>
         </div>
-        <div class="flex justify-center items-center mt-4">
+        <div class="flex justify-center items-center mt-2">
           <p class="inline-flex items-center text-gray-700 font-medium text-xs text-center">
             <span class="ml-2"
               >You don't have an account?<a

@@ -50,9 +50,9 @@ const handleRegister = async () => {
           <input type="password" v-model="form.password" id="password" required class="pl-2 outline-none border w-full rounded-lg py-2"/>
         </div>
         <div class="mt-3 flex justify-center items-center">
-          <button type="submit" class="bg-green-400 p-2 rounded-xl text-white hover:bg-green-700 font-bold">Register</button>
+          <button type="submit" class="bg-green-400 w-full p-2 rounded-xl text-white hover:bg-green-700 font-bold">Register</button>
         </div>
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center text-sm mt-2">
           <p>Already have an account? <router-link to="/login" class="text-blue-400 hover:text-blue-700">Login here</router-link></p>
         </div>
       </div>
