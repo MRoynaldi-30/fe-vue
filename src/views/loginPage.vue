@@ -28,19 +28,38 @@ const handleLogin = async () => {
     class="h-screen bg-gradient-to-br from-blue-600 to-cyan-300 flex justify-center items-center w-full"
   >
     <form @submit.prevent="handleLogin" class="">
-      <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-xl max-w-sm">
+      <div class="bg-white px-10 py-4 rounded-xl w-screen shadow-xl max-w-sm">
         <div class="flex justify-center items-center">
-          <h1 class="font-bold text-xl">Login</h1>
+          <h1 class="font-bold text-3xl">Login</h1>
         </div>
-        <div>
+        <div class="mt-3">
           <label for="email">Email</label>
-          <input type="email" v-model="form.email" id="email" required />
+          <input
+            type="email"
+            class="pl-2 outline-none border w-full rounded-lg py-2"
+            v-model="form.email"
+            id="email"
+            required
+          />
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" v-model="form.password" id="password" required />
+        <div class="mt-3">
+          <label for="password" class="mt-3">Password</label>
+          <input
+            type="password"
+            class="pl-2 outline-none border w-full rounded-lg py-2"
+            v-model="form.password"
+            id="password"
+            required
+          />
         </div>
-        <button type="submit">Login</button>
+        <div class="flex justify-center items-center mt-3">
+          <button
+            type="submit"
+            class="bg-green-400 p-2 rounded-xl text-white hover:bg-green-700 font-bold"
+          >
+            Login
+          </button>
+        </div>
         <div class="flex justify-center items-center mt-4">
           <p class="inline-flex items-center text-gray-700 font-medium text-xs text-center">
             <span class="ml-2"
