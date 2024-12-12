@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { login } from '../services/authService'
+// import '../assets/style.css'
 
 const form = ref({
   email: '',
@@ -23,23 +24,40 @@ const handleLogin = async () => {
 }
 </script>
 <template>
-  <div class="login-container">
-    <h1>Login</h1>
-    <form @submit.prevent="handleLogin">
-      <div>
-        <label for="email">Email</label>
-        <input type="email" v-model="form.email" id="email" required />
+  <div
+    class="h-screen bg-gradient-to-br from-blue-600 to-cyan-300 flex justify-center items-center w-full"
+  >
+    <form @submit.prevent="handleLogin" class="">
+      <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-xl max-w-sm">
+        <div class="flex justify-center items-center">
+          <h1 class="font-bold text-xl">Login</h1>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" v-model="form.email" id="email" required />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" v-model="form.password" id="password" required />
+        </div>
+        <button type="submit">Login</button>
+        <div class="flex justify-center items-center mt-4">
+          <p class="inline-flex items-center text-gray-700 font-medium text-xs text-center">
+            <span class="ml-2"
+              >You don't have an account?<a
+                href="#"
+                class="text-xs ml-2 text-blue-500 font-semibold"
+                ><router-link to="/register">Register here</router-link> &rarr;</a
+              >
+            </span>
+          </p>
+        </div>
       </div>
-      <div>
-        <label for="password">Password</label>
-        <input type="password" v-model="form.password" id="password" required />
-      </div>
-      <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <router-link to="/register">Register here</router-link></p>
+    <!-- <p>Don't have an account? </p> -->
   </div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 /* Tambahkan styling Anda di sini */
-</style>
+</style> -->
