@@ -13,6 +13,7 @@ Sebelum menjalankan proyek ini, pastikan kamu memiliki hal-hal berikut:
 
 Node.js (versi terbaru yang stabil)
 npm (atau yarn jika kamu memilih untuk menggunakan yarn).
+Kemudian untuk styling-nya saya menggunakan TailwindCss. 
 
 Untuk memverifikasi jika sudah terinstal, jalankan perintah berikut di terminal:
 ```bash
@@ -46,6 +47,17 @@ Menjalankan Projek:
 ```bash
   npm run dev
 ```
+
+
+## ScreenShoot Projek
+  ### Login Page
+![Logo](./public/ss-img/login.png)
+  ### Register Page
+![Logo](./public/ss-img/register.png)
+  ### Home Page
+![Logo](./public/ss-img/home.png)
+  ### Add Guest Page
+![Logo](./public/ss-img/add.png)
 
 
 ## Sekian dan Terima kasih
