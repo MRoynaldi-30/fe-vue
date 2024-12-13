@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { showGuest, searchGuest } from '../services/authService'
+import { showGuest, searchGuest, deleteGuest } from '../services/authService'
 import HeaderComponent from '@/components/headerComponent.vue'
 import FooterComponent from '@/components/footerComponent.vue'
 
@@ -33,6 +33,20 @@ const handleSearchGuest = async () => {
   } catch (error) {
     console.error('Failed to search guest:', error.response.data.message)
     alert('No guests found with the given name.')
+  }
+}
+
+const handleDeleteGuest = async (id) => {
+  if (confirm('Are you sure you want to delete this guest?')) {
+    try {
+      await deleteGuest(id, token)
+      // Hapus guest dari daftar lokal
+      guests.value = guests.value.filter((guest) => guest.id !== id)
+      alert('Guest deleted successfully.')
+    } catch (error) {
+      console.error('Failed to delete guest:', error.response.data.message)
+      alert('Failed to delete guest.')
+    }
   }
 }
 </script>
@@ -73,6 +87,7 @@ const handleSearchGuest = async () => {
             <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Email</th>
             <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Date of Birth</th>
             <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">ID Card Number</th>
+            <th class="py-4 px-6 text-left text-gray-600 font-bold uppercase">Actions</th>
           </tr>
         </thead>
         <tbody class="bg-white">
@@ -81,6 +96,9 @@ const handleSearchGuest = async () => {
             <td class="py-4 px-6 border-b border-gray-200 truncate">{{ guest.email }}</td>
             <td class="py-4 px-6 border-b border-gray-200">{{ guest.date_of_birth }}</td>
             <td class="py-4 px-6 border-b border-gray-200">{{ guest.id_card_number }}</td>
+            <td class="py-4 px-6 border-b border-gray-200">
+              <button @click="handleDeleteGuest(guest.id)" class="bg-red-400 p-2 rounded-lg">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>

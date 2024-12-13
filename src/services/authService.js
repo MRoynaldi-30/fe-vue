@@ -25,6 +25,16 @@ export const addGuest = (data, token) =>
     headers: { Authorization: `Bearer ${token}` },
   });
 
+export const updateGuest = (id, data, token) =>
+  api.put(`/guest/update/${id}`, data, {
+    headers: { Authorization: `Bearer ${token}`}
+  })
+
+export const deleteGuest = (id, token) =>
+  api.delete(`/guest/delete/${id}`, {
+    headers: { Authorization: `Bearer ${token}`}
+  })
+
 export const searchGuest = (name, token) =>
   api.post('/guest/search', { name }, {
     headers: { Authorization: `Bearer ${token}` },
