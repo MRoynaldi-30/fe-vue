@@ -1,7 +1,6 @@
 <script setup>
 import { logout} from '../services/authService'
 import { useRouter } from 'vue-router'
-// import { ref, onMounted } from 'vue'
 
 const router = useRouter()
 const token = localStorage.getItem('token')

@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { login } from '../services/authService'
-// import '../assets/style.css'
 
 const form = ref({
   email: '',

@@ -1,14 +1,10 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { showGuest, searchGuest } from '../services/authService'
-// import { useRouter } from 'vue-router'
 import HeaderComponent from '@/components/headerComponent.vue'
 import FooterComponent from '@/components/footerComponent.vue'
-// import '../assets/style.css'
 
-// const router = useRouter()
 const token = localStorage.getItem('token')
-
 const guests = ref([]) // Untuk menyimpan semua guests
 const searchQuery = ref('') // Query untuk mencari guest
 const searchResults = ref([]) // Hasil pencarian guest
