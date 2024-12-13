@@ -3,12 +3,14 @@ import Login from '../views/loginPage.vue';
 import Register from '../views/registerPage.vue';
 import Home from '../views/homePage.vue';
 import AddGuest from '@/views/addGuest.vue';
+import editGuest from '@/views/editGuest.vue';
 
 const routes = [
   { path: '/login', name: 'Login', component: Login, meta: { requiresGuest: true } }, // Hanya untuk guest
   { path: '/register', name: 'Register', component: Register, meta: { requiresGuest: true } }, // Hanya untuk guest
   { path: '/home', name: 'Home', component: Home, meta: { requiresAuth: true } }, // Hanya untuk user login
   { path: '/add', name: 'Add', component: AddGuest, meta: { requiresAuth: true } }, // Hanya untuk user login
+  { path: '/edit/:id', name: 'Edit', component: editGuest, meta: { requiresAuth: true}},
   { path: '/', redirect: '/login' },
 ];
 

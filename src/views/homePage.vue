@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { showGuest, searchGuest, deleteGuest } from '../services/authService'
+import { useRouter } from 'vue-router'
 import HeaderComponent from '@/components/headerComponent.vue'
 import FooterComponent from '@/components/footerComponent.vue'
 
@@ -9,6 +10,7 @@ const guests = ref([]) // Untuk menyimpan semua guests
 const searchQuery = ref('') // Query untuk mencari guest
 const searchResults = ref([]) // Hasil pencarian guest
 
+const router = useRouter()
 // Ambil semua guests saat halaman dimuat
 onMounted(async () => {
   try {
@@ -49,6 +51,10 @@ const handleDeleteGuest = async (id) => {
     }
   }
 }
+
+const navigateToEdit = (id) => {
+  router.push({ name: 'Edit', params: { id } });
+};
 </script>
 
 <template>
@@ -97,7 +103,10 @@ const handleDeleteGuest = async (id) => {
             <td class="py-4 px-6 border-b border-gray-200">{{ guest.date_of_birth }}</td>
             <td class="py-4 px-6 border-b border-gray-200">{{ guest.id_card_number }}</td>
             <td class="py-4 px-6 border-b border-gray-200">
-              <button @click="handleDeleteGuest(guest.id)" class="bg-red-400 p-2 rounded-lg">Delete</button>
+              <div class="flex gap-2">
+                <button @click="handleDeleteGuest(guest.id)" class="bg-red-400 p-2 rounded-lg">Delete</button>
+                <button @click="navigateToEdit(guest.id)" class="bg-blue-400 p-2 rounded-lg">Edit</button>
+              </div>
             </td>
           </tr>
         </tbody>
