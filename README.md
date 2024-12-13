@@ -6,8 +6,10 @@ Project Technical Test Web Development Aksesmu (Guest Book).
     2. Register User
     3. Logout User
     4. Add data Guest
-    5. Show data Guest
-    6. Search data Guest
+    5. Update data Guest
+    6. Delete data Guest
+    7. Show data Guest
+    8. Search data Guest
 ## Prasyarat
 Sebelum menjalankan proyek ini, pastikan kamu memiliki hal-hal berikut:
 
@@ -58,6 +60,8 @@ Menjalankan Projek:
 ![Logo](./public/ss-img/home.png)
   ### Add Guest Page
 ![Logo](./public/ss-img/add.png)
+  ### Update Guest Page
+![Logo](./public/ss-img/update.png)
 
 
 ## Sekian dan Terima kasih
